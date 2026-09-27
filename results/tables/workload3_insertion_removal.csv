@@ -1,0 +1,5 @@
+n,DynamicArray_beginning_insertion_ns,LinkedList_beginning_insertion_ns,DynamicArray_beginning_removal_ns,LinkedList_beginning_removal_ns,DynamicArray_middle_insertion_ns,LinkedList_middle_insertion_ns,DynamicArray_middle_removal_ns,LinkedList_middle_removal_ns
+100,817,141,5666,134,677,462,362,234
+1000,228,136,211,148,207,1326,191,1269
+10000,1103,158,1302,221,769,14702,698,14906
+100000,14579,246,14249,318,6606,124178,6226,126491
