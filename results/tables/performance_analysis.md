@@ -235,3 +235,8 @@ element while maintaining the heap property.
 
 Overall, the benchmark demonstrates the relationship between data
 structure design, theoretical complexity and measured performance.
+## Reproducibility
+
+The benchmark was executed using the implemented DynamicArray, LinkedList,
+and MinHeap classes. The reported results were generated from the benchmark
+program and saved in the results/tables and results/plots directories.
