@@ -247,3 +247,8 @@ algorithmic complexity and practical execution performance.
 
 The benchmark measurements provide experimental results that can be
 compared with the theoretical complexity of the implemented operations.
+## Verification
+
+All functional tests passed successfully.
+
+The benchmark was executed for input sizes of 100, 1,000, 10,000 and 100,000.
