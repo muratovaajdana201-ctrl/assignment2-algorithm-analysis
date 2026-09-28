@@ -107,12 +107,12 @@ Execution time is measured using System.nanoTime().
 
 The benchmark also records additional operation metrics such as accesses and comparisons.
 
-### Benchmark Output
+ Benchmark Output
 
 The following screenshot shows the benchmark execution output:
 ![Benchmark Output](results/plots/benchmark_output.png)
 
-### Workload 1 - Random Access
+ Workload 1 - Random Access
 ![Workload 1 - Random Access](results/plots/workload1_random_access.png)
 
 Random indexes are used to compare indexed access between DynamicArray and LinkedList.
@@ -124,7 +124,7 @@ number of accesses
 
 DynamicArray provides direct indexed access, while LinkedList must traverse nodes to reach an indexed position.
 
-### Workload 2 - Search
+Workload 2 - Search
 ![Workload 2 - Search](results/plots/workload2_search.png)
 Linear search is performed on DynamicArray and LinkedList.
 
@@ -135,7 +135,7 @@ number of comparisons
 
 Both structures use linear search, so the theoretical search complexity is Θ(n).
 
-### Workload 3 - Insertion and Removal
+Workload 3 - Insertion and Removal
 ![Workload 3 - Insertion](results/plots/workload3_insertion.png)
 
 Insertion and removal are measured at the beginning and in the middle of DynamicArray and LinkedList.
@@ -148,11 +148,11 @@ Middle operations involve different costs. DynamicArray can directly access the 
 
 Insertion
 
-### Workload 3 - Removal
+Workload 3 - Removal
 
 ![Workload 3 - Removal](results/plots/workload3_removal.png)
 
-### Workload 4 - Priority Processing
+ Workload 4 - Priority Processing
 ![Workload 4 - Priority Processing](results/plots/workload4_priority_processing.png)
 
 MinHeap insertion and extraction are measured for different input sizes.
