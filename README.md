@@ -164,3 +164,192 @@ Middle operations involve different costs. DynamicArray can directly access the 
 ![Workload 4 - Priority Processing](results/plots/workload4_priority_processing.png)
 
 MinHeap insertion and extraction are measured for
+The benchmark records:
+
+- insertion time
+- extraction time
+- insertion comparisons
+- extraction comparisons
+
+The results demonstrate the logarithmic behaviour expected from binary heap operations.
+
+## 5. Results and Observations
+
+The benchmark results show the expected differences between the data structures.
+
+DynamicArray performs indexed access directly, while LinkedList must traverse nodes to reach an indexed position. This becomes particularly noticeable as the input size increases.
+
+For beginning insertion and removal, LinkedList can update the head without shifting all existing elements.
+
+For middle operations, DynamicArray can directly access the required position but may need to move elements. LinkedList must traverse the list before performing the operation.
+
+For search, both structures perform linear search and therefore have Θ(n) theoretical complexity.
+
+For MinHeap, insertion and extraction depend on the height of the heap. Since a binary heap has logarithmic height, these operations have Θ(log n) worst-case complexity.
+
+Individual execution times should not be treated as exact proofs of theoretical complexity because JVM optimisation, caching, memory layout, garbage collection and other system effects can affect measurements.
+
+## 6. Result Tables
+
+The benchmark tables are stored in `results/tables/`.
+
+The available result files are:
+
+- `workload1_random_access.csv`
+- `workload2_search.csv`
+- `workload3_insertion_removal.csv`
+- `workload4_priority_processing.csv`
+- `Assignment2_Results.xlsx`
+
+The CSV files contain the numerical benchmark results for each workload.
+
+The Excel workbook contains the collected benchmark results and can be used for further analysis.
+
+## 7. Complexity Analysis
+
+The theoretical complexity analysis is stored in [`results/tables/complexity_analysis.md`](results/tables/complexity_analysis.md).
+
+It contains best-case, average-case, worst-case and auxiliary-space complexities for the implemented operations.
+
+The analysis covers:
+
+- DynamicArray
+- LinkedList
+- MinHeap
+
+## 8. Loop Invariants
+
+The loop invariant proofs are stored in [`results/invariant_proofs.md`](results/invariant_proofs.md).
+
+The proofs cover:
+
+- `DynamicArray.contains()`
+- `MinHeap.siftDown()`
+
+Each proof explains:
+
+- initialization
+- maintenance
+- termination
+- why the invariant proves correctness
+
+## 9. Performance Analysis
+
+The comparison between theoretical complexity and measured benchmark results is stored in [`results/tables/performance_analysis.md`](results/tables/performance_analysis.md).
+
+The analysis compares the measured performance with the expected theoretical behaviour.
+
+It also discusses:
+
+- access counters
+- comparison counters
+- scaling behaviour
+- differences between DynamicArray and LinkedList
+- MinHeap performance
+
+Measured execution time can be affected by JVM optimisation, caching, memory layout, garbage collection and other system effects.
+
+Therefore, benchmark results are used to examine general performance patterns rather than treating individual nanosecond measurements as exact complexity proofs.
+
+## 10. Project Structure
+
+```text
+assignment2-algorithm-analysis/
+│
+├── README.md
+├── pom.xml
+│
+├── src/
+│   ├── main/
+│   │   └── java/
+│   │       ├── DynamicArray.java
+│   │       ├── LinkedList.java
+│   │       ├── MinHeap.java
+│   │       └── Benchmark.java
+│   │
+│   └── test/
+│       └── java/
+│           └── Tests.java
+│
+└── results/
+    ├── plots/
+    │   ├── test_output.png
+    │   ├── benchmark_output.png
+    │   ├── workload1_random_access.png
+    │   ├── workload2_search.png
+    │   ├── workload3_insertion.png
+    │   ├── workload3_removal.png
+    │   └── workload4_priority_processing.png
+    │
+    ├── tables/
+    │   ├── Assignment2_Results.xlsx
+    │   ├── workload1_random_access.csv
+    │   ├── workload2_search.csv
+    │   ├── workload3_insertion_removal.csv
+    │   ├── workload4_priority_processing.csv
+    │   ├── complexity_analysis.md
+    │   └── performance_analysis.md
+    │
+    └── invariant_proofs.md
+```
+
+## 11. How to Run
+
+The project can be opened in IntelliJ IDEA as a Maven project.
+
+### Step 1 - Run Tests
+
+Run `Tests.java` first to verify that the data structures work correctly.
+
+The expected result is:
+
+```text
+Testing DynamicArray...
+DynamicArray: PASSED
+Testing LinkedList...
+LinkedList: PASSED
+Testing MinHeap...
+MinHeap: PASSED
+
+ALL TESTS PASSED.
+```
+
+### Step 2 - Run Benchmark
+
+Run `Benchmark.java` to execute the four benchmark workloads.
+
+The benchmark tests input sizes of 100, 1,000, 10,000 and 100,000.
+
+The resulting measurements are stored in the result tables and are used to create the benchmark charts.
+
+## 12. Final Result
+
+All three data structures passed the functional tests.
+
+The project contains:
+
+- data structure implementations
+- functional tests
+- four benchmark workloads
+- benchmark CSV files
+- Excel results
+- benchmark charts
+- complexity analysis
+- performance analysis
+- loop invariant proofs
+
+## 13. Conclusion
+
+The project demonstrates the relationship between data structure design, algorithmic complexity and practical execution performance.
+
+The benchmark measurements provide experimental results that can be compared with the theoretical complexity of the implemented operations.
+
+The results demonstrate that different data structures are suitable for different workloads. DynamicArray is effective for indexed access, LinkedList is useful for operations at the beginning of the list, and MinHeap provides efficient priority processing.
+
+## 14. Verification
+
+All functional tests passed successfully.
+
+The benchmark was executed for input sizes of 100, 1,000, 10,000 and 100,000.
+
+The project results, charts and analysis are included in the `results/` directory.
